@@ -1,0 +1,6 @@
+## file location = /usr/local/etc/inc/plugins.inc.d/openvpn/ovpn-linkup
+## This file is already in place with OPNSense's OpenVPN configuration but we will add 1 additional line:
+
+/var/etc/up.sh
+
+## put it just before the exit 0 line at the bootom of the file
