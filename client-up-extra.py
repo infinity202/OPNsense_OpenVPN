@@ -4,18 +4,14 @@ import os
 import socket
 import smtplib
 
-sender = 'yoursendingaddress@server.info'
-receivers = ['youradmin@server.info']
+sender = 'openvpn@yourserver.com'
+receivers = ['youremail@yourserver.com']
 
 time = datetime.datetime.now()
 formatted_time = time.strftime("%A, %B %d, %Y at %I:%M:%S %p")
-#name = os.environ['common_name']
-#localip = os.environ['ifconfig_pool_remote_ip']
-#remoteip = os.environ['untrusted_ip']
-#hostname = socket.getfqdn(remoteip)
 
-message = """From: OPNSense <yoursendingaddress@server.info>
-To: To Admin <youradmin@server.info>
+message = """From: openvpn@yourserver.com
+To: youremail@yourserver.com
 MIME-Version: 1.0
 Content-type: text/html
 Subject: OpenVPN client connected
