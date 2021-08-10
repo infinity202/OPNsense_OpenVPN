@@ -25,10 +25,14 @@ The solution:
 4. But we can find the standard script they (OPNsense) use and it is here 
   /usr/local/libexec/openvpn-client.up
 5. We will break as little as we can so we will just add 1 extra line. At the end, just before "exit 0" and after the "fi"
-6. We will write "/var/etc/up.sh" , which will be our new and extra script
+6. We will add a line with: "/var/etc/up.sh" , which will be our new and extra script
 7. Saving the file will result in a write warning, override this warning with w! 
-8. So now we can create our new script located at /var/etc/  (see the file in this repo) (make sure you make it executable "chmod +x up.sh")
+8. So now we can create our new script located at /var/etc/up.sh  (see the file in this repo) (make sure you make it executable "chmod +x up.sh")
 9. Now as you will see we will call a python script with the name client-up-extra.py
 10. This file should also be created in /var/etc (make sure you make it executable "chmod +x client-up-extra.py")
 11. See attached example. Make sure to adjust the mail server and sender and receiver addresses.
 12. You don't have to restart any server or service since OpenVPN already knows it needs to call the script mentioned at 4. so everything will work fine instantly
+13. openvpn-client.down is also available from OPNsense, I added 2 "down" files too
+
+
+MAKE SURE TO CHECK THE openvpn-client.up and openvpn-client.down FILES AFTER EACH OPNSENSOE UPDATE/UPGRADE. THEY CAN BE CHANGED AND THE EXTRA LINES WE ADD CAN BE REMOVED.
